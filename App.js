@@ -16,13 +16,25 @@ export default function App() {
   function resetCounter(){
     setCountnum(0);
   }
+
+  function showAbout(){
+    alert("Névjegy", "Kovács Dorina", "SZOFT II/N", "2023-02-27");
+  }
  
   return (
     <View style={styles.container}>
-      <Text>Számol</Text>
-      <Button title = 'számol' onPress={increment}/>
+      <Button title="Névjegy" onPress={showAbout}/>
+      <Button title="Alap" onPress={resetCounter}/>
+
+      <Text style={styles.title}>Számol</Text>
+      <Text>{countnum}</Text>
+
+      <TouchableHighlight onPress={increment} style={styles.button1}>
+      <Text style={styles.text}>Számol</Text>
+      </TouchableHighlight>
+      
       <StatusBar style="auto" />
-      <TouchableHighlight  style={styles.button1}><Text style={styles.text}>Számol</Text></TouchableHighlight>
+  
     </View>
   
   );
@@ -45,7 +57,17 @@ const styles = StyleSheet.create({
   text:{
      color: '#FFFFFF',
      fontWeight: "600",
-     textAlign: 'center'
+     textAlign: 'center',
+     fontSize: "15px",
+     
+  },
+  title:{
+     fontWeight: "600",
+     textAlign: 'center',
+     fontSize: 30,
+     padding: 20,
+
+     
   }
 
 });
